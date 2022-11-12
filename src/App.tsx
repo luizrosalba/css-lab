@@ -2,24 +2,28 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import Header from './components/template/Header';
+import NoPage from './components/template/NoPage';
+import Home from './components/Home/Home';
+import Flex from './components/Flex/Flex';
+import Grid from './components/Grid/Grid';
+import Footer from './components/template/Footer';
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route index element={<Home />} />
+        <Route path="flex" element={<Flex />} />
+        <Route path="grid" element={<Grid />} />
+        <Route path="*" element={<NoPage />} />
+      </Routes>
+    <Footer />
+    </BrowserRouter>
   );
 }
 
