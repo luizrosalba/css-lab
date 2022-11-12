@@ -1,5 +1,15 @@
 .header {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
     display: flex;
     justify-content: space-around;
-    margin: 1em;
+    padding: 0.5em;
+    font-size: x-large;
+    font-weight: 600;
+    background-color: white;
+}
+a:link {
+    text-decoration: none;
 }

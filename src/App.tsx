@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 import Header from './components/template/Header';
@@ -16,12 +15,14 @@ function App() {
   return (
     <BrowserRouter>
       <Header />
-      <Routes>
-        <Route index element={<Home />} />
-        <Route path="flex" element={<Flex />} />
-        <Route path="grid" element={<Grid />} />
-        <Route path="*" element={<NoPage />} />
-      </Routes>
+      <div className='body-page'>
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path="flex" element={<Flex />} />
+          <Route path="grid" element={<Grid />} />
+          <Route path="*" element={<NoPage />} />
+        </Routes>
+      </div>
     <Footer />
     </BrowserRouter>
   );
